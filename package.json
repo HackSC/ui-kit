@@ -2,10 +2,10 @@
   "name": "@hacksc/ui-kit",
   "description": "The official HackSC UI kit",
   "version": "0.0.9",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "files": [
-    "lib",
-    "index.d.ts"
+      "dist"
   ],
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -21,9 +21,11 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md ./dist",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "prerelease": "npm run build",
-    "release": "npm publish --access public ./dist"
+    "release": "npm publish --access public ."
   },
   "eslintConfig": {
     "extends": [
@@ -41,9 +43,7 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "style-loader": "^3.3.2",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.76.3",
-    "webpack-cli": "^5.0.1"
+    "url-loader": "^4.1.1"
   },
   "peerDependencies": {
     "fuse.js": "^6.6.2",
