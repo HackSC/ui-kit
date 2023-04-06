@@ -1,29 +1,31 @@
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { useState } from "react";
-import {
-  Calendar as ReactCalendar,
-  CalendarProps as ReactCalendarProps,
-} from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import * as ReactCalendar from "react-calendar";
 import styled from "styled-components";
 import { GlowSpan } from "../glow-span/glow-span";
+import { LooseValue } from "react-calendar/dist/cjs/shared/types";
+import { calendarStyles } from "./style";
 
-export interface CalendarProps extends ReactCalendarProps {
+export type DateCallback = (
+  value: Date,
+  event: React.MouseEvent<HTMLButtonElement>
+) => void;
+
+export interface HCalendarProps {
   navigationColor?: string;
   navigationShadowColor?: string;
+  onClickDay: DateCallback;
+  value?: LooseValue;
 }
 
-export function Calendar(props: CalendarProps) {
-  const [date, setDate] = useState(new Date());
-
+export function Calendar(props: HCalendarProps) {
   return (
     <Wrapper>
-      <ReactCalendar
-        onChange={setDate}
-        value={date}
+      <ReactCalendar.Calendar
+        onClickDay={props.onClickDay}
+        value={props.value}
         minDetail="year"
-        formatShortWeekday={(locale, date) => date.toString()[0]}
+        formatShortWeekday={(_, date) => date.toString()[0]}
         navigationLabel={({ label }) => (
           <GlowSpan
             color={props.navigationColor}
@@ -40,13 +42,14 @@ export function Calendar(props: CalendarProps) {
         }
         next2Label={null}
         prev2Label={null}
-        {...props}
       />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
+  ${calendarStyles}
+
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;

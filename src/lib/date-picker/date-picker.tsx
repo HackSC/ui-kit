@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { DateCallback } from "react-calendar";
+import { DateCallback } from "../calendar/calendar";
 import styled from "styled-components";
-import { Calendar, CalendarProps } from "../calendar/calendar";
+import { Calendar, HCalendarProps } from "../calendar/calendar";
 import OneLineText, { OneLineTextProps } from "../one-line-text/one-line-text";
 
 /* eslint-disable-next-line */
 export type DatePickerProps = OneLineTextProps &
-  CalendarProps & {
+  HCalendarProps & {
     valueOneLineText?: string;
   };
 
