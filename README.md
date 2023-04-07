@@ -35,5 +35,5 @@ The reason is because we use React hooks in this UI kit :) and you would be runn
 7. Run `npm link @hacksc/ui-kit` to symlink the global symlink for the UI kit
    into the app's `node_modules`
 8. Start the demo app and start playing around with the kit! Since it's a
-   symlink, any changes to the UI kit in the `ui-kit/` folder will reflect on
+   symlink, any changes to the UI kit in the `ui-kit/` folder will require a `build` first before it reflects on
    the demo app.
