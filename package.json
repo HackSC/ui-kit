@@ -26,9 +26,6 @@
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
-    "prerelease": "npm run build",
-    "release": "npm publish --access public .",
-    "commit": "cz",
     "prepare": "husky install"
   },
   "eslintConfig": {

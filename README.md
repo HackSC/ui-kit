@@ -14,11 +14,6 @@ Builds the UI kit for production to the `build` folder. It correctly bundles Rea
 
 The build is minified and the filenames include the hashes.
 
-### `npm run release`
-
-Release the UI kit in public mode to NPM (requires you to be logged into NPM and have access to
-the `hacksc` organization)
-
 ## Testing the UI kit in a demo app
 
 If you want to test your changes for the UI kit on a separate React app, you
