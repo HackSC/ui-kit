@@ -1,34 +1,48 @@
-# HackSC official UI kit
+<div align="center">
+   <img src="images/coin-monopoly.png" alt="Coin monopoly character" width=80/>
+   <img src="images/jigsaw-twins.png" alt="Heart superhero-like character" width=120/>
+   <img src="images/heart-superhero.png" alt="Jigsaw twins character" width=90/>
+   <img src="images/planet-stars.png" alt="Planet character with a planetary ring surrounded by stars" width=110/>
+   <h1 style="margin-top: 20px;">HackSC Official UI Kit 🌺</h1>
+</div>
 
-We build everything here :)
+<div align="center">
+<img src="https://img.shields.io/github/license/hacksc/ui-kit" alt="MIT License">
+</div>
+<br />
 
-## Available Scripts
+The official UI kit for HackSC! This is where we store most of our main theme kit that was bootstrapped in 2023.
+
+## Installation
+
+```
+# NPM
+npm install @hacksc/ui-kit
+
+# Yarn
+yarn add @hacksc/ui-kit
+```
+
+## Usage
+
+```
+import { Button } from "@hacksc/ui-kit"
+
+function Example() {
+  return <Button color="blue">Submit to HackSC 2024!</Button>
+}
+```
+
+## Development
+
+Here are some available scripts:
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.
+Run tests on the UI kit (E2E + React tests)
 
 ### `npm run build`
 
 Builds the UI kit for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.
-
-## Testing the UI kit in a demo app
-
-If you want to test your changes for the UI kit on a separate React app, you
-will need to temporarily symlink the React dependency of your demo app to this package.
-
-The reason is because we use React hooks in this UI kit :) and you would be running 2 instances of React per [this](https://legacy.reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react) when you do `npm link @hacksc/ui-kit` in your demo app if you don't do the below steps (or equivalent steps to ensure only one React instance is present on your demo app).
-
-1. `cd` to your demo app folder (should be a React/Next.js app)
-2. Make sure you installed all dependencies in your demo app via your favorite `install` command. This app must have a React dependencies version that is compatible with the React version specified in this package (in `package.json`'s `peerDependencies`)
-3. `cd` back to our UI kit folder, and `npm link ${PATH_TO_APP}/node_modules/react` to temporarily symlink the demo app's React to this UI kit.
-   the UI kit's 
-4. Run `npm link` to create a global symlink for this UI kit
-6. `cd` back to the demo app
-7. Run `npm link @hacksc/ui-kit` to symlink the global symlink for the UI kit
-   into the app's `node_modules`
-8. Start the demo app and start playing around with the kit! Since it's a
-   symlink, any changes to the UI kit in the `ui-kit/` folder will require a `build` first before it reflects on
-   the demo app.
