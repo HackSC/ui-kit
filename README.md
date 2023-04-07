@@ -11,7 +11,7 @@
 </div>
 <br />
 
-The official UI kit for HackSC! This is where we store most of our main theme kit that was bootstrapped in 2023.
+The official UI kit for HackSC! This is where we store most of our main theme kit that was bootstrapped and successfully used in HackSC 2023. 
 
 ## Installation
 
